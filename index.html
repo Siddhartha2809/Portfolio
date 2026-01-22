@@ -1,626 +1,634 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Siddhartha Panchakarla | Portfolio</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: '#0f172a', // slate-900
-                        secondary: '#1e293b', // slate-800
-                        accent: '#38bdf8', // sky-400
-                        highlight: '#818cf8', // indigo-400
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                    },
-                    animation: {
-                        'float': 'float 6s ease-in-out infinite',
-                        'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
-                    },
-                    keyframes: {
-                        float: {
-                            '0%, 100%': { transform: 'translateY(0)' },
-                            '50%': { transform: 'translateY(-20px)' },
+    <html lang="en" class="scroll-smooth">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Siddhartha Panchakarla | Portfolio</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script>
+            tailwind.config = {
+                theme: {
+                    extend: {
+                        colors: {
+                            primary: '#0f172a', // slate-900
+                            secondary: '#1e293b', // slate-800
+                            accent: '#38bdf8', // sky-400
+                            highlight: '#818cf8', // indigo-400
                         },
-                        fadeInUp: {
-                            '0%': { opacity: '0', transform: 'translateY(20px)' },
-                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        fontFamily: {
+                            sans: ['Inter', 'sans-serif'],
+                        },
+                        animation: {
+                            'float': 'float 6s ease-in-out infinite',
+                            'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
+                        },
+                        keyframes: {
+                            float: {
+                                '0%, 100%': { transform: 'translateY(0)' },
+                                '50%': { transform: 'translateY(-20px)' },
+                            },
+                            fadeInUp: {
+                                '0%': { opacity: '0', transform: 'translateY(20px)' },
+                                '100%': { opacity: '1', transform: 'translateY(0)' },
+                            }
                         }
                     }
                 }
             }
-        }
-    </script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #0f172a;
-            color: #e2e8f0;
-            overflow-x: hidden;
-        }
-
-        /* Custom Scrollbar */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #0f172a;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #334155;
-            border-radius: 4px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #475569;
-        }
-
-        /* Glassmorphism Utilities */
-        .glass-nav {
-            background: rgba(15, 23, 42, 0.7);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-        }
+        </script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
         
-        .glass-card {
-            background: rgba(30, 41, 59, 0.4);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        
-        .glass-card:hover {
-            transform: translateY(-5px);
-            background: rgba(30, 41, 59, 0.6);
-            border-color: rgba(56, 189, 248, 0.3);
-            box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.5);
-        }
+        <style>
+            body {
+                font-family: 'Inter', sans-serif;
+                background-color: #0f172a;
+                color: #e2e8f0;
+                overflow-x: hidden;
+            }
 
-        /* Text Gradients */
-        .text-gradient {
-            background: linear-gradient(135deg, #38bdf8 0%, #818cf8 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
+            /* Custom Scrollbar */
+            ::-webkit-scrollbar {
+                width: 8px;
+            }
+            ::-webkit-scrollbar-track {
+                background: #0f172a;
+            }
+            ::-webkit-scrollbar-thumb {
+                background: #334155;
+                border-radius: 4px;
+            }
+            ::-webkit-scrollbar-thumb:hover {
+                background: #475569;
+            }
 
-        /* Timeline Graphics */
-        .timeline-line {
-            position: absolute;
-            left: 24px;
-            top: 0;
-            bottom: 0;
-            width: 2px;
-            background: linear-gradient(to bottom, #38bdf8, #818cf8, transparent);
-            z-index: 0;
-        }
-        
-        @media (min-width: 768px) {
+            /* Glassmorphism Utilities */
+            .glass-nav {
+                background: rgba(15, 23, 42, 0.7);
+                backdrop-filter: blur(12px);
+                -webkit-backdrop-filter: blur(12px);
+                border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            }
+            
+            .glass-card {
+                background: rgba(30, 41, 59, 0.4);
+                backdrop-filter: blur(10px);
+                -webkit-backdrop-filter: blur(10px);
+                border: 1px solid rgba(255, 255, 255, 0.05);
+                transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            }
+            
+            .glass-card:hover {
+                transform: translateY(-5px);
+                background: rgba(30, 41, 59, 0.6);
+                border-color: rgba(56, 189, 248, 0.3);
+                box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.5);
+            }
+
+            /* Text Gradients */
+            .text-gradient {
+                background: linear-gradient(135deg, #38bdf8 0%, #818cf8 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+
+            /* Timeline Graphics */
             .timeline-line {
-                left: 50%;
-                transform: translateX(-50%);
+                position: absolute;
+                left: 24px;
+                top: 0;
+                bottom: 0;
+                width: 2px;
+                background: linear-gradient(to bottom, #38bdf8, #818cf8, transparent);
+                z-index: 0;
             }
-        }
+            
+            @media (min-width: 768px) {
+                .timeline-line {
+                    left: 50%;
+                    transform: translateX(-50%);
+                }
+            }
 
-        /* Animated Background Mesh */
-        .mesh-bg {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            z-index: -1;
-            opacity: 0.4;
-            background: 
-                radial-gradient(circle at 15% 50%, rgba(56, 189, 248, 0.08) 0%, transparent 25%),
-                radial-gradient(circle at 85% 30%, rgba(129, 140, 248, 0.08) 0%, transparent 25%);
-        }
-    </style>
-</head>
-<body class="antialiased selection:bg-sky-500/30 selection:text-sky-200">
+            /* Animated Background Mesh */
+            .mesh-bg {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100vw;
+                height: 100vh;
+                z-index: -1;
+                opacity: 0.4;
+                background: 
+                    radial-gradient(circle at 15% 50%, rgba(56, 189, 248, 0.08) 0%, transparent 25%),
+                    radial-gradient(circle at 85% 30%, rgba(129, 140, 248, 0.08) 0%, transparent 25%);
+            }
+        </style>
+    </head>
+    <body class="antialiased selection:bg-sky-500/30 selection:text-sky-200">
 
-    <!-- Background Decoration -->
-    <div class="mesh-bg"></div>
+        <!-- Background Decoration -->
+        <div class="mesh-bg"></div>
 
-    <!-- Navigation -->
-    <nav class="fixed w-full z-50 glass-nav transition-all duration-300" id="navbar">
-        <div class="container mx-auto px-6 max-w-6xl">
-            <div class="flex items-center justify-between h-20">
-                <!-- Logo -->
-                <a href="#" class="text-2xl font-bold tracking-tighter hover:opacity-80 transition-opacity">
-                    <span class="text-white">Siddhartha</span><span class="text-sky-400">.</span>
-                </a>
-
-                <!-- Desktop Menu -->
-                <div class="hidden md:flex space-x-8 items-center">
-                    <a href="#about" class="text-sm font-medium text-slate-300 hover:text-sky-400 transition-colors">About</a>
-                    <a href="#skills" class="text-sm font-medium text-slate-300 hover:text-sky-400 transition-colors">Skills</a>
-                    <a href="#projects" class="text-sm font-medium text-slate-300 hover:text-sky-400 transition-colors">Projects</a>
-                    <a href="#education" class="text-sm font-medium text-slate-300 hover:text-sky-400 transition-colors">Education</a>
-                    <a href="#contact" class="px-5 py-2.5 text-sm font-semibold text-slate-900 bg-sky-400 hover:bg-sky-300 rounded-full transition-all shadow-[0_0_20px_rgba(56,189,248,0.3)] hover:shadow-[0_0_30px_rgba(56,189,248,0.5)]">
-                        Contact Me
-                    </a>
-                </div>
-
-                <!-- Mobile Menu Button -->
-                <button id="mobile-menu-btn" class="md:hidden text-slate-300 hover:text-white focus:outline-none">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
-                    </svg>
-                </button>
-            </div>
-        </div>
-
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-slate-900 border-t border-slate-800 absolute w-full left-0">
-            <div class="px-6 py-4 space-y-3">
-                <a href="#about" class="block text-slate-300 hover:text-sky-400 py-2">About</a>
-                <a href="#skills" class="block text-slate-300 hover:text-sky-400 py-2">Skills</a>
-                <a href="#projects" class="block text-slate-300 hover:text-sky-400 py-2">Projects</a>
-                <a href="#education" class="block text-slate-300 hover:text-sky-400 py-2">Education</a>
-                <a href="#contact" class="block text-sky-400 font-semibold py-2">Contact Me</a>
-            </div>
-        </div>
-    </nav>
-
-    <main class="relative z-10">
-        <!-- Hero Section -->
-        <section class="min-h-screen flex items-center pt-20">
+        <!-- Navigation -->
+        <nav class="fixed w-full z-50 glass-nav transition-all duration-300" id="navbar">
             <div class="container mx-auto px-6 max-w-6xl">
-                <div class="grid md:grid-cols-2 gap-12 items-center">
-                    <div class="order-2 md:order-1 opacity-0 animate-fade-in-up" style="animation-delay: 0.1s;">
-                        <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-slate-800/50 border border-slate-700 mb-6">
-                            <span class="relative flex h-2 w-2">
-                                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-                                <span class="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
-                            </span>
-                            <span class="text-xs font-medium text-slate-300">Available for Opportunities</span>
+                <div class="flex items-center justify-between h-20">
+                    <!-- Logo -->
+                    <a href="#" class="text-2xl font-bold tracking-tighter hover:opacity-80 transition-opacity">
+                        <span class="text-white">Siddhartha</span><span class="text-sky-400">.</span>
+                    </a>
+
+                    <!-- Desktop Menu -->
+                    <div class="hidden md:flex space-x-8 items-center">
+                        <a href="#about" class="text-sm font-medium text-slate-300 hover:text-sky-400 transition-colors">About</a>
+                        <a href="#skills" class="text-sm font-medium text-slate-300 hover:text-sky-400 transition-colors">Skills</a>
+                        <a href="#projects" class="text-sm font-medium text-slate-300 hover:text-sky-400 transition-colors">Projects</a>
+                        <a href="#education" class="text-sm font-medium text-slate-300 hover:text-sky-400 transition-colors">Education</a>
+                        <a href="#contact" class="px-5 py-2.5 text-sm font-semibold text-slate-900 bg-sky-400 hover:bg-sky-300 rounded-full transition-all shadow-[0_0_20px_rgba(56,189,248,0.3)] hover:shadow-[0_0_30px_rgba(56,189,248,0.5)]">
+                            Contact Me
+                        </a>
+                    </div>
+
+                    <!-- Mobile Menu Button -->
+                    <button id="mobile-menu-btn" class="md:hidden text-slate-300 hover:text-white focus:outline-none">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden bg-slate-900 border-t border-slate-800 absolute w-full left-0">
+                <div class="px-6 py-4 space-y-3">
+                    <a href="#about" class="block text-slate-300 hover:text-sky-400 py-2">About</a>
+                    <a href="#skills" class="block text-slate-300 hover:text-sky-400 py-2">Skills</a>
+                    <a href="#projects" class="block text-slate-300 hover:text-sky-400 py-2">Projects</a>
+                    <a href="#education" class="block text-slate-300 hover:text-sky-400 py-2">Education</a>
+                    <a href="#contact" class="block text-sky-400 font-semibold py-2">Contact Me</a>
+                </div>
+            </div>
+        </nav>
+
+        <main class="relative z-10">
+            <!-- Hero Section -->
+            <section class="min-h-screen flex items-center pt-20">
+                <div class="container mx-auto px-6 max-w-6xl">
+                    <div class="grid md:grid-cols-2 gap-12 items-center">
+                        <div class="order-2 md:order-1 opacity-0 animate-fade-in-up" style="animation-delay: 0.1s;">
+                            <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-slate-800/50 border border-slate-700 mb-6">
+                                <span class="relative flex h-2 w-2">
+                                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                                    <span class="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+                                </span>
+                                <span class="text-xs font-medium text-slate-300">Available for Opportunities</span>
+                            </div>
+                            
+                            <h1 class="text-4xl sm:text-5xl md:text-7xl font-extrabold text-white tracking-tight leading-tight mb-6">
+                                Hello, I'm <br>
+                                <span class="text-gradient">Siddhartha</span>
+                            </h1>
+                            
+                            <p class="text-lg text-slate-400 mb-8 max-w-lg leading-relaxed">
+                                A motivated Computer Science undergraduate based in <span class="text-slate-200">Andhra Pradesh</span>. I build offline-first mobile apps and scalable web systems using modern tech stacks.
+                            </p>
+
+                            <div class="flex flex-wrap gap-4">
+                                <a href="#projects" class="px-7 py-3.5 bg-sky-500 hover:bg-sky-400 text-white font-semibold rounded-lg transition-all shadow-[0_0_20px_rgba(56,189,248,0.2)]">
+                                    View My Work
+                                </a>
+                                <a href="#contact" class="px-7 py-3.5 bg-slate-800 hover:bg-slate-700 text-slate-200 font-medium rounded-lg border border-slate-700 transition-all">
+                                    Contact Me
+                                </a>
+                            </div>
+
+                            <!-- Social Links -->
+                            <div class="flex items-center gap-6 mt-10">
+                                <a href="mailto:siddarthapanchakarla@gmail.com" class="text-slate-400 hover:text-sky-400 transition-colors transform hover:scale-110">
+                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                                </a>
+                                <a href="https://www.linkedin.com/in/panchakarla-siddhartha-278008377" target="_blank" class="text-slate-400 hover:text-sky-400 transition-colors transform hover:scale-110">
+                                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                                </a>
+                                <a href="#" class="text-slate-400 hover:text-sky-400 transition-colors transform hover:scale-110">
+                                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                                </a>
+                            </div>
                         </div>
                         
-                        <h1 class="text-4xl sm:text-5xl md:text-7xl font-extrabold text-white tracking-tight leading-tight mb-6">
-                            Hello, I'm <br>
-                            <span class="text-gradient">Siddhartha</span>
-                        </h1>
-                        
-                        <p class="text-lg text-slate-400 mb-8 max-w-lg leading-relaxed">
-                            A motivated Computer Science undergraduate based in <span class="text-slate-200">Andhra Pradesh</span>. I build offline-first mobile apps and scalable web systems using modern tech stacks.
+                        <div class="order-1 md:order-2 flex justify-center relative opacity-0 animate-fade-in-up" style="animation-delay: 0.3s;">
+                            <!-- Decorative glow -->
+                            <div class="absolute inset-0 bg-sky-500/20 blur-3xl rounded-full transform scale-75"></div>
+                            
+                            <!-- Image Container -->
+                            <div class="relative w-64 h-64 md:w-80 md:h-80 rounded-full border-4 border-slate-700/50 p-2 animate-float glass-card">
+                                <div class="w-full h-full rounded-full overflow-hidden relative">
+                                    <!-- Placeholder Image since I don't have the original file uploaded -->
+                                    <img src="Siddhu1.png" onerror="this.src='https://ui-avatars.com/api/?name=Siddhartha+Panchakarla&background=0f172a&color=38bdf8&size=512&font-size=0.33'" alt="Siddhartha" class="w-full h-full object-cover">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- About Section -->
+            <section id="about" class="py-20 bg-slate-900/50">
+                <div class="container mx-auto px-6 max-w-4xl">
+                    <div class="text-center mb-16">
+                        <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">About Me</h2>
+                        <div class="h-1 w-20 bg-sky-500 mx-auto rounded-full"></div>
+                    </div>
+                    
+                    <div class="glass-card rounded-2xl p-8 md:p-12 text-center md:text-left">
+                        <p class="text-lg text-slate-300 leading-8 mb-6">
+                            I am a motivated <strong class="text-sky-400">Computer Science undergraduate</strong> with a strong foundation in <span class="text-slate-100">Java, Python, and full-stack development</span>. I am eager to leverage my technical skills in a dynamic environment.
                         </p>
-
-                        <div class="flex flex-wrap gap-4">
-                            <a href="#projects" class="px-7 py-3.5 bg-sky-500 hover:bg-sky-400 text-white font-semibold rounded-lg transition-all shadow-[0_0_20px_rgba(56,189,248,0.2)]">
-                                View My Work
-                            </a>
-                            <a href="#contact" class="px-7 py-3.5 bg-slate-800 hover:bg-slate-700 text-slate-200 font-medium rounded-lg border border-slate-700 transition-all">
-                                Contact Me
-                            </a>
-                        </div>
-
-                        <!-- Social Links -->
-                        <div class="flex items-center gap-6 mt-10">
-                            <a href="mailto:siddarthapanchakarla@gmail.com" class="text-slate-400 hover:text-sky-400 transition-colors transform hover:scale-110">
-                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
-                            </a>
-                            <a href="https://www.linkedin.com/in/panchakarla-siddhartha-278008377" target="_blank" class="text-slate-400 hover:text-sky-400 transition-colors transform hover:scale-110">
-                                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
-                            </a>
-                            <a href="#" class="text-slate-400 hover:text-sky-400 transition-colors transform hover:scale-110">
-                                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-                            </a>
-                        </div>
-                    </div>
-                    
-                    <div class="order-1 md:order-2 flex justify-center relative opacity-0 animate-fade-in-up" style="animation-delay: 0.3s;">
-                        <!-- Decorative glow -->
-                        <div class="absolute inset-0 bg-sky-500/20 blur-3xl rounded-full transform scale-75"></div>
+                        <p class="text-lg text-slate-300 leading-8">
+                            I have proven experience in building <span class="text-sky-400">offline-first mobile apps</span> and <span class="text-sky-400">web-based management systems</span>, demonstrating practical problem-solving and database expertise. I am committed to delivering scalable software solutions while collaborating effectively to achieve organizational goals.
+                        </p>
                         
-                        <!-- Image Container -->
-                        <div class="relative w-64 h-64 md:w-80 md:h-80 rounded-full border-4 border-slate-700/50 p-2 animate-float glass-card">
-                             <div class="w-full h-full rounded-full overflow-hidden relative">
-                                <!-- Placeholder Image since I don't have the original file uploaded -->
-                                <img src="Siddhu1.png" onerror="this.src='https://ui-avatars.com/api/?name=Siddhartha+Panchakarla&background=0f172a&color=38bdf8&size=512&font-size=0.33'" alt="Siddhartha" class="w-full h-full object-cover">
-                             </div>
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-10 border-t border-slate-700 pt-8">
+                            <div class="text-center">
+                                <div class="text-sky-400 font-bold text-3xl mb-1">8.03</div>
+                                <div class="text-xs text-slate-500 uppercase tracking-widest">CGPA</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-sky-400 font-bold text-3xl mb-1">3+</div>
+                                <div class="text-xs text-slate-500 uppercase tracking-widest">Major Projects</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-sky-400 font-bold text-3xl mb-1">10+</div>
+                                <div class="text-xs text-slate-500 uppercase tracking-widest">Tech Skills</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-sky-400 font-bold text-3xl mb-1">100%</div>
+                                <div class="text-xs text-slate-500 uppercase tracking-widest">Commitment</div>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <!-- About Section -->
-        <section id="about" class="py-20 bg-slate-900/50">
-            <div class="container mx-auto px-6 max-w-4xl">
-                <div class="text-center mb-16">
-                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">About Me</h2>
-                    <div class="h-1 w-20 bg-sky-500 mx-auto rounded-full"></div>
-                </div>
-                
-                <div class="glass-card rounded-2xl p-8 md:p-12 text-center md:text-left">
-                    <p class="text-lg text-slate-300 leading-8 mb-6">
-                        I am a motivated <strong class="text-sky-400">Computer Science undergraduate</strong> with a strong foundation in <span class="text-slate-100">Java, Python, and full-stack development</span>. I am eager to leverage my technical skills in a dynamic environment.
-                    </p>
-                    <p class="text-lg text-slate-300 leading-8">
-                        I have proven experience in building <span class="text-sky-400">offline-first mobile apps</span> and <span class="text-sky-400">web-based management systems</span>, demonstrating practical problem-solving and database expertise. I am committed to delivering scalable software solutions while collaborating effectively to achieve organizational goals.
-                    </p>
-                    
-                    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-10 border-t border-slate-700 pt-8">
-                        <div class="text-center">
-                            <div class="text-sky-400 font-bold text-3xl mb-1">8.03</div>
-                            <div class="text-xs text-slate-500 uppercase tracking-widest">CGPA</div>
+            <!-- Skills Section -->
+            <section id="skills" class="py-20 relative">
+                <div class="container mx-auto px-6 max-w-6xl">
+                    <div class="text-center mb-16">
+                        <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Technical Proficiency</h2>
+                        <p class="text-slate-400">My technical toolkit and soft skills</p>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <!-- Technical Skills -->
+                        <div class="glass-card rounded-2xl p-8">
+                            <h3 class="text-xl font-bold text-white mb-6 flex items-center">
+                                <svg class="w-6 h-6 mr-3 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
+                                Technical Skills
+                            </h3>
+                            
+                            <div class="space-y-6">
+                                <div>
+                                    <div class="flex justify-between text-sm mb-2 text-slate-400">
+                                        <span>Languages (Java, Python, PHP)</span>
+                                        <span>Advanced</span>
+                                    </div>
+                                    <div class="h-2 bg-slate-700 rounded-full overflow-hidden">
+                                        <div class="h-full bg-gradient-to-r from-sky-500 to-indigo-500 w-[90%] rounded-full"></div>
+                                    </div>
+                                </div>
+                                
+                                <div>
+                                    <div class="flex justify-between text-sm mb-2 text-slate-400">
+                                        <span>Web (HTML, CSS, JS, React)</span>
+                                        <span>Advanced</span>
+                                    </div>
+                                    <div class="h-2 bg-slate-700 rounded-full overflow-hidden">
+                                        <div class="h-full bg-gradient-to-r from-sky-500 to-indigo-500 w-[85%] rounded-full"></div>
+                                    </div>
+                                </div>
+                                
+                                <div>
+                                    <div class="flex justify-between text-sm mb-2 text-slate-400">
+                                        <span>Data (SQL, Pandas, Numpy)</span>
+                                        <span>Intermediate</span>
+                                    </div>
+                                    <div class="h-2 bg-slate-700 rounded-full overflow-hidden">
+                                        <div class="h-full bg-gradient-to-r from-sky-500 to-indigo-500 w-[80%] rounded-full"></div>
+                                    </div>
+                                </div>
+
+                                <div class="flex flex-wrap gap-2 pt-4">
+                                    <span class="px-3 py-1 text-xs font-medium bg-slate-700 text-sky-300 rounded-full border border-slate-600">React Native</span>
+                                    <span class="px-3 py-1 text-xs font-medium bg-slate-700 text-sky-300 rounded-full border border-slate-600">MySQL</span>
+                                    <span class="px-3 py-1 text-xs font-medium bg-slate-700 text-sky-300 rounded-full border border-slate-600">Capacitor</span>
+                                    <span class="px-3 py-1 text-xs font-medium bg-slate-700 text-sky-300 rounded-full border border-slate-600">Express.js</span>
+                                </div>
+                            </div>
                         </div>
-                        <div class="text-center">
-                            <div class="text-sky-400 font-bold text-3xl mb-1">3+</div>
-                            <div class="text-xs text-slate-500 uppercase tracking-widest">Major Projects</div>
-                        </div>
-                        <div class="text-center">
-                            <div class="text-sky-400 font-bold text-3xl mb-1">10+</div>
-                            <div class="text-xs text-slate-500 uppercase tracking-widest">Tech Skills</div>
-                        </div>
-                        <div class="text-center">
-                            <div class="text-sky-400 font-bold text-3xl mb-1">100%</div>
-                            <div class="text-xs text-slate-500 uppercase tracking-widest">Commitment</div>
+
+                        <!-- Soft Skills -->
+                        <div class="glass-card rounded-2xl p-8">
+                            <h3 class="text-xl font-bold text-white mb-6 flex items-center">
+                                <svg class="w-6 h-6 mr-3 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+                                Soft Skills
+                            </h3>
+                            <div class="grid grid-cols-2 gap-4">
+                                <div class="p-4 bg-slate-800/50 rounded-xl border border-slate-700 hover:border-sky-500/50 transition-colors">
+                                    <h4 class="font-semibold text-white mb-1">Analytical Thinking</h4>
+                                    <p class="text-xs text-slate-400">Logical approach to complex problems</p>
+                                </div>
+                                <div class="p-4 bg-slate-800/50 rounded-xl border border-slate-700 hover:border-sky-500/50 transition-colors">
+                                    <h4 class="font-semibold text-white mb-1">Problem-Solving</h4>
+                                    <p class="text-xs text-slate-400">Effective resolution strategies</p>
+                                </div>
+                                <div class="p-4 bg-slate-800/50 rounded-xl border border-slate-700 hover:border-sky-500/50 transition-colors">
+                                    <h4 class="font-semibold text-white mb-1">Communication</h4>
+                                    <p class="text-xs text-slate-400">Clear and concise articulation</p>
+                                </div>
+                                <div class="p-4 bg-slate-800/50 rounded-xl border border-slate-700 hover:border-sky-500/50 transition-colors">
+                                    <h4 class="font-semibold text-white mb-1">Team Collaboration</h4>
+                                    <p class="text-xs text-slate-400">Synergy in group settings</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <!-- Skills Section -->
-        <section id="skills" class="py-20 relative">
-            <div class="container mx-auto px-6 max-w-6xl">
-                <div class="text-center mb-16">
-                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Technical Proficiency</h2>
-                    <p class="text-slate-400">My technical toolkit and soft skills</p>
-                </div>
+            <!-- Projects Section -->
+            <section id="projects" class="py-20 bg-slate-900/50">
+                <div class="container mx-auto px-6 max-w-6xl">
+                    <div class="flex flex-col md:flex-row justify-between items-end mb-12">
+                        <div>
+                            <h2 class="text-3xl md:text-4xl font-bold text-white mb-2">Featured Projects</h2>
+                            <p class="text-slate-400">Hands-on experience with real-world applications</p>
+                        </div>
+                    </div>
 
-                <div class="grid md:grid-cols-2 gap-8">
-                    <!-- Technical Skills -->
-                    <div class="glass-card rounded-2xl p-8">
-                        <h3 class="text-xl font-bold text-white mb-6 flex items-center">
-                            <svg class="w-6 h-6 mr-3 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
-                            Technical Skills
-                        </h3>
+                    <div class="grid lg:grid-cols-3 md:grid-cols-2 gap-8">
                         
-                        <div class="space-y-6">
-                            <div>
-                                <div class="flex justify-between text-sm mb-2 text-slate-400">
-                                    <span>Languages (Java, Python, PHP)</span>
-                                    <span>Advanced</span>
-                                </div>
-                                <div class="h-2 bg-slate-700 rounded-full overflow-hidden">
-                                    <div class="h-full bg-gradient-to-r from-sky-500 to-indigo-500 w-[90%] rounded-full"></div>
-                                </div>
-                            </div>
-                            
-                            <div>
-                                <div class="flex justify-between text-sm mb-2 text-slate-400">
-                                    <span>Web (HTML, CSS, JS, React)</span>
-                                    <span>Advanced</span>
-                                </div>
-                                <div class="h-2 bg-slate-700 rounded-full overflow-hidden">
-                                    <div class="h-full bg-gradient-to-r from-sky-500 to-indigo-500 w-[85%] rounded-full"></div>
-                                </div>
-                            </div>
-                            
-                            <div>
-                                <div class="flex justify-between text-sm mb-2 text-slate-400">
-                                    <span>Data (SQL, Pandas, Numpy)</span>
-                                    <span>Intermediate</span>
-                                </div>
-                                <div class="h-2 bg-slate-700 rounded-full overflow-hidden">
-                                    <div class="h-full bg-gradient-to-r from-sky-500 to-indigo-500 w-[80%] rounded-full"></div>
-                                </div>
-                            </div>
-
-                            <div class="flex flex-wrap gap-2 pt-4">
-                                <span class="px-3 py-1 text-xs font-medium bg-slate-700 text-sky-300 rounded-full border border-slate-600">React Native</span>
-                                <span class="px-3 py-1 text-xs font-medium bg-slate-700 text-sky-300 rounded-full border border-slate-600">MySQL</span>
-                                <span class="px-3 py-1 text-xs font-medium bg-slate-700 text-sky-300 rounded-full border border-slate-600">Capacitor</span>
-                                <span class="px-3 py-1 text-xs font-medium bg-slate-700 text-sky-300 rounded-full border border-slate-600">Express.js</span>
+                        <!-- Project 1: Smart Attendance -->
+                        <div class="glass-card rounded-xl overflow-hidden flex flex-col group h-full">
+                            <div class="h-2 bg-gradient-to-r from-sky-500 to-indigo-500"></div>
+                            <div class="p-6 flex-1 flex flex-col">
+                                <h3 class="text-xl font-bold text-white mb-2 group-hover:text-sky-400 transition-colors">Smart Attendance System</h3>
+                                <div class="text-xs font-mono text-sky-400 mb-4">React • Express • SQLite • Capacitor</div>
+                                
+                                <p class="text-slate-400 text-sm mb-4 flex-1">
+                                    An offline-first mobile app for Android/iOS enabling faculty to record attendance without internet.
+                                </p>
+                                
+                                <ul class="space-y-2 mb-6">
+                                    <li class="flex items-start text-xs text-slate-300">
+                                        <svg class="w-4 h-4 text-green-400 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                                        <span>Sync engine for offline-to-server data reconciliation</span>
+                                    </li>
+                                    <li class="flex items-start text-xs text-slate-300">
+                                        <svg class="w-4 h-4 text-green-400 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                                        <span>Conflict Resolution logic for data integrity</span>
+                                    </li>
+                                    <li class="flex items-start text-xs text-slate-300">
+                                        <svg class="w-4 h-4 text-green-400 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                                        <span>Role-Based Access Control (RBAC)</span>
+                                    </li>
+                                </ul>
                             </div>
                         </div>
-                    </div>
 
-                    <!-- Soft Skills -->
-                    <div class="glass-card rounded-2xl p-8">
-                        <h3 class="text-xl font-bold text-white mb-6 flex items-center">
-                            <svg class="w-6 h-6 mr-3 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
-                            Soft Skills
-                        </h3>
-                        <div class="grid grid-cols-2 gap-4">
-                            <div class="p-4 bg-slate-800/50 rounded-xl border border-slate-700 hover:border-sky-500/50 transition-colors">
-                                <h4 class="font-semibold text-white mb-1">Analytical Thinking</h4>
-                                <p class="text-xs text-slate-400">Logical approach to complex problems</p>
-                            </div>
-                            <div class="p-4 bg-slate-800/50 rounded-xl border border-slate-700 hover:border-sky-500/50 transition-colors">
-                                <h4 class="font-semibold text-white mb-1">Problem-Solving</h4>
-                                <p class="text-xs text-slate-400">Effective resolution strategies</p>
-                            </div>
-                            <div class="p-4 bg-slate-800/50 rounded-xl border border-slate-700 hover:border-sky-500/50 transition-colors">
-                                <h4 class="font-semibold text-white mb-1">Communication</h4>
-                                <p class="text-xs text-slate-400">Clear and concise articulation</p>
-                            </div>
-                            <div class="p-4 bg-slate-800/50 rounded-xl border border-slate-700 hover:border-sky-500/50 transition-colors">
-                                <h4 class="font-semibold text-white mb-1">Team Collaboration</h4>
-                                <p class="text-xs text-slate-400">Synergy in group settings</p>
+                        <!-- Project 2: Assessment Portal -->
+                        <div class="glass-card rounded-xl overflow-hidden flex flex-col group h-full">
+                            <div class="h-2 bg-gradient-to-r from-sky-500 to-indigo-500"></div>
+                            <div class="p-6 flex-1 flex flex-col">
+                                <h3 class="text-xl font-bold text-white mb-2 group-hover:text-sky-400 transition-colors">Student Assessment Portal</h3>
+                                <div class="text-xs font-mono text-sky-400 mb-4">HTML • CSS • JS • PHP • MySQL</div>
+                                
+                                <p class="text-slate-400 text-sm mb-4 flex-1">
+                                    A multi-role platform where students take exams, faculty conduct them, and admins manage data.
+                                </p>
+                                
+                                <ul class="space-y-2 mb-6">
+                                    <li class="flex items-start text-xs text-slate-300">
+                                        <svg class="w-4 h-4 text-green-400 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                                        <span>Comprehensive Admin Dashboard</span>
+                                    </li>
+                                    <li class="flex items-start text-xs text-slate-300">
+                                        <svg class="w-4 h-4 text-green-400 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                                        <span>Real-time exam conducting interface</span>
+                                    </li>
+                                    <li class="flex items-start text-xs text-slate-300">
+                                        <svg class="w-4 h-4 text-green-400 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                                        <span>Secure data management with MySQL</span>
+                                    </li>
+                                </ul>
                             </div>
                         </div>
+
+                        <!-- Project 3: Minor Course Registration -->
+                        <div class="glass-card rounded-xl overflow-hidden flex flex-col group h-full">
+                            <div class="h-2 bg-gradient-to-r from-sky-500 to-indigo-500"></div>
+                            <div class="p-6 flex-1 flex flex-col">
+                                <h3 class="text-xl font-bold text-white mb-2 group-hover:text-sky-400 transition-colors">Course Registration System</h3>
+                                <div class="text-xs font-mono text-sky-400 mb-4">PHP • MySQL • HTML • CSS</div>
+                                
+                                <p class="text-slate-400 text-sm mb-4 flex-1">
+                                    A web portal for students to apply for minor courses with automated acknowledgment generation.
+                                </p>
+                                
+                                <ul class="space-y-2 mb-6">
+                                    <li class="flex items-start text-xs text-slate-300">
+                                        <svg class="w-4 h-4 text-green-400 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                                        <span>Registration Number Validation</span>
+                                    </li>
+                                    <li class="flex items-start text-xs text-slate-300">
+                                        <svg class="w-4 h-4 text-green-400 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                                        <span>Auto-generated Acknowledgment Letters</span>
+                                    </li>
+                                    <li class="flex items-start text-xs text-slate-300">
+                                        <svg class="w-4 h-4 text-green-400 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                                        <span>Admin Data Export to CSV/PDF</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <!-- Projects Section -->
-        <section id="projects" class="py-20 bg-slate-900/50">
-            <div class="container mx-auto px-6 max-w-6xl">
-                <div class="flex flex-col md:flex-row justify-between items-end mb-12">
-                    <div>
-                        <h2 class="text-3xl md:text-4xl font-bold text-white mb-2">Featured Projects</h2>
-                        <p class="text-slate-400">Hands-on experience with real-world applications</p>
-                    </div>
-                </div>
-
-                <div class="grid lg:grid-cols-3 md:grid-cols-2 gap-8">
+            <!-- Education & Certs -->
+            <section id="education" class="py-20 relative overflow-hidden">
+                <div class="container mx-auto px-6 max-w-6xl relative z-10">
                     
-                    <!-- Project 1: Smart Attendance -->
-                    <div class="glass-card rounded-xl overflow-hidden flex flex-col group h-full">
-                        <div class="h-2 bg-gradient-to-r from-sky-500 to-indigo-500"></div>
-                        <div class="p-6 flex-1 flex flex-col">
-                            <h3 class="text-xl font-bold text-white mb-2 group-hover:text-sky-400 transition-colors">Smart Attendance System</h3>
-                            <div class="text-xs font-mono text-sky-400 mb-4">React • Express • SQLite • Capacitor</div>
-                            
-                            <p class="text-slate-400 text-sm mb-4 flex-1">
-                                An offline-first mobile app for Android/iOS enabling faculty to record attendance without internet.
-                            </p>
-                            
-                            <ul class="space-y-2 mb-6">
-                                <li class="flex items-start text-xs text-slate-300">
-                                    <svg class="w-4 h-4 text-green-400 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                                    <span>Sync engine for offline-to-server data reconciliation</span>
-                                </li>
-                                <li class="flex items-start text-xs text-slate-300">
-                                    <svg class="w-4 h-4 text-green-400 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                                    <span>Conflict Resolution logic for data integrity</span>
-                                </li>
-                                <li class="flex items-start text-xs text-slate-300">
-                                    <svg class="w-4 h-4 text-green-400 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                                    <span>Role-Based Access Control (RBAC)</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
+                    <div class="grid lg:grid-cols-2 gap-16">
+                        
+                        <!-- Education Timeline -->
+                        <div>
+                            <h2 class="text-3xl font-bold text-white mb-8">Education</h2>
+                            <div class="relative pl-8 md:pl-0">
+                                <!-- Vertical Line -->
+                                <div class="hidden md:block absolute left-0 top-2 bottom-0 w-0.5 bg-slate-700"></div>
 
-                    <!-- Project 2: Assessment Portal -->
-                    <div class="glass-card rounded-xl overflow-hidden flex flex-col group h-full">
-                        <div class="h-2 bg-gradient-to-r from-sky-500 to-indigo-500"></div>
-                        <div class="p-6 flex-1 flex flex-col">
-                            <h3 class="text-xl font-bold text-white mb-2 group-hover:text-sky-400 transition-colors">Student Assessment Portal</h3>
-                            <div class="text-xs font-mono text-sky-400 mb-4">HTML • CSS • JS • PHP • MySQL</div>
-                            
-                            <p class="text-slate-400 text-sm mb-4 flex-1">
-                                A multi-role platform where students take exams, faculty conduct them, and admins manage data.
-                            </p>
-                            
-                            <ul class="space-y-2 mb-6">
-                                <li class="flex items-start text-xs text-slate-300">
-                                    <svg class="w-4 h-4 text-green-400 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                                    <span>Comprehensive Admin Dashboard</span>
-                                </li>
-                                <li class="flex items-start text-xs text-slate-300">
-                                    <svg class="w-4 h-4 text-green-400 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                                    <span>Real-time exam conducting interface</span>
-                                </li>
-                                <li class="flex items-start text-xs text-slate-300">
-                                    <svg class="w-4 h-4 text-green-400 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                                    <span>Secure data management with MySQL</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <!-- Project 3: Minor Course Registration -->
-                    <div class="glass-card rounded-xl overflow-hidden flex flex-col group h-full">
-                        <div class="h-2 bg-gradient-to-r from-sky-500 to-indigo-500"></div>
-                        <div class="p-6 flex-1 flex flex-col">
-                            <h3 class="text-xl font-bold text-white mb-2 group-hover:text-sky-400 transition-colors">Course Registration System</h3>
-                            <div class="text-xs font-mono text-sky-400 mb-4">PHP • MySQL • HTML • CSS</div>
-                            
-                            <p class="text-slate-400 text-sm mb-4 flex-1">
-                                A web portal for students to apply for minor courses with automated acknowledgment generation.
-                            </p>
-                            
-                            <ul class="space-y-2 mb-6">
-                                <li class="flex items-start text-xs text-slate-300">
-                                    <svg class="w-4 h-4 text-green-400 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                                    <span>Registration Number Validation</span>
-                                </li>
-                                <li class="flex items-start text-xs text-slate-300">
-                                    <svg class="w-4 h-4 text-green-400 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                                    <span>Auto-generated Acknowledgment Letters</span>
-                                </li>
-                                <li class="flex items-start text-xs text-slate-300">
-                                    <svg class="w-4 h-4 text-green-400 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                                    <span>Admin Data Export to CSV/PDF</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-        <!-- Education & Certs -->
-        <section id="education" class="py-20 relative overflow-hidden">
-            <div class="container mx-auto px-6 max-w-6xl relative z-10">
-                
-                <div class="grid lg:grid-cols-2 gap-16">
-                    
-                    <!-- Education Timeline -->
-                    <div>
-                        <h2 class="text-3xl font-bold text-white mb-8">Education</h2>
-                        <div class="relative pl-8 md:pl-0">
-                            <!-- Vertical Line -->
-                            <div class="hidden md:block absolute left-0 top-2 bottom-0 w-0.5 bg-slate-700"></div>
-
-                            <div class="space-y-12">
-                                <!-- Degree -->
-                                <div class="relative md:pl-8">
-                                    <div class="hidden md:block absolute -left-[5px] top-2 w-3 h-3 rounded-full bg-sky-500 ring-4 ring-slate-900"></div>
-                                    <div class="glass-card p-6 rounded-xl border-l-4 border-sky-500 md:border-l border-slate-700">
-                                        <div class="flex flex-col sm:flex-row justify-between sm:items-center mb-2">
-                                            <h3 class="text-lg font-bold text-white">B.Tech in Computer Science</h3>
-                                            <span class="text-xs font-mono text-sky-400 bg-sky-400/10 px-2 py-1 rounded">2022 - 2026</span>
+                                <div class="space-y-12">
+                                    <!-- Degree -->
+                                    <div class="relative md:pl-8">
+                                        <div class="hidden md:block absolute -left-[5px] top-2 w-3 h-3 rounded-full bg-sky-500 ring-4 ring-slate-900"></div>
+                                        <div class="glass-card p-6 rounded-xl border-l-4 border-sky-500 md:border-l border-slate-700">
+                                            <div class="flex flex-col sm:flex-row justify-between sm:items-center mb-2">
+                                                <h3 class="text-lg font-bold text-white">B.Tech in Computer Science</h3>
+                                                <span class="text-xs font-mono text-sky-400 bg-sky-400/10 px-2 py-1 rounded">2022 - 2026</span>
+                                            </div>
+                                            <p class="text-slate-300 text-sm mb-2">DVR & Dr. HS MIC College of Technology</p>
+                                            <p class="text-slate-400 text-xs">CGPA: <span class="text-white font-semibold">8.03/10</span></p>
                                         </div>
-                                        <p class="text-slate-300 text-sm mb-2">DVR & Dr. HS MIC College of Technology</p>
-                                        <p class="text-slate-400 text-xs">CGPA: <span class="text-white font-semibold">8.03/10</span></p>
                                     </div>
-                                </div>
 
-                                <!-- Inter -->
-                                <div class="relative md:pl-8">
-                                    <div class="hidden md:block absolute -left-[5px] top-2 w-3 h-3 rounded-full bg-slate-600 ring-4 ring-slate-900"></div>
-                                    <div class="glass-card p-6 rounded-xl border-l-4 border-slate-600 md:border-l border-slate-700">
-                                        <div class="flex flex-col sm:flex-row justify-between sm:items-center mb-2">
-                                            <h3 class="text-lg font-bold text-white">Intermediate (MPC)</h3>
-                                            <span class="text-xs font-mono text-slate-400 bg-slate-800 px-2 py-1 rounded">2020 - 2022</span>
+                                    <!-- Inter -->
+                                    <div class="relative md:pl-8">
+                                        <div class="hidden md:block absolute -left-[5px] top-2 w-3 h-3 rounded-full bg-slate-600 ring-4 ring-slate-900"></div>
+                                        <div class="glass-card p-6 rounded-xl border-l-4 border-slate-600 md:border-l border-slate-700">
+                                            <div class="flex flex-col sm:flex-row justify-between sm:items-center mb-2">
+                                                <h3 class="text-lg font-bold text-white">Intermediate (MPC)</h3>
+                                                <span class="text-xs font-mono text-slate-400 bg-slate-800 px-2 py-1 rounded">2020 - 2022</span>
+                                            </div>
+                                            <p class="text-slate-300 text-sm mb-2">Narayana Junior College</p>
+                                            <p class="text-slate-400 text-xs">Score: <span class="text-white font-semibold">89.2%</span></p>
                                         </div>
-                                        <p class="text-slate-300 text-sm mb-2">Narayana Junior College</p>
-                                        <p class="text-slate-400 text-xs">Score: <span class="text-white font-semibold">89.2%</span></p>
                                     </div>
-                                </div>
 
-                                <!-- School -->
-                                <div class="relative md:pl-8">
-                                    <div class="hidden md:block absolute -left-[5px] top-2 w-3 h-3 rounded-full bg-slate-600 ring-4 ring-slate-900"></div>
-                                    <div class="glass-card p-6 rounded-xl border-l-4 border-slate-600 md:border-l border-slate-700">
-                                        <div class="flex flex-col sm:flex-row justify-between sm:items-center mb-2">
-                                            <h3 class="text-lg font-bold text-white">SSC (10th Standard)</h3>
-                                            <span class="text-xs font-mono text-slate-400 bg-slate-800 px-2 py-1 rounded">2019 - 2020</span>
+                                    <!-- School -->
+                                    <div class="relative md:pl-8">
+                                        <div class="hidden md:block absolute -left-[5px] top-2 w-3 h-3 rounded-full bg-slate-600 ring-4 ring-slate-900"></div>
+                                        <div class="glass-card p-6 rounded-xl border-l-4 border-slate-600 md:border-l border-slate-700">
+                                            <div class="flex flex-col sm:flex-row justify-between sm:items-center mb-2">
+                                                <h3 class="text-lg font-bold text-white">SSC (10th Standard)</h3>
+                                                <span class="text-xs font-mono text-slate-400 bg-slate-800 px-2 py-1 rounded">2019 - 2020</span>
+                                            </div>
+                                            <p class="text-slate-300 text-sm mb-2">Bhashyam High School</p>
+                                            <p class="text-slate-400 text-xs">GPA: <span class="text-white font-semibold">10/10 (100%)</span></p>
                                         </div>
-                                        <p class="text-slate-300 text-sm mb-2">Bhashyam High School</p>
-                                        <p class="text-slate-400 text-xs">GPA: <span class="text-white font-semibold">10/10 (100%)</span></p>
                                     </div>
                                 </div>
                             </div>
                         </div>
+
+                        <!-- Certifications -->
+                        <div>
+                            <h2 class="text-3xl font-bold text-white mb-8">Certifications</h2>
+                            <div class="grid gap-4">
+                                <div class="glass-card p-5 rounded-xl flex items-center gap-4 hover:bg-slate-800/80 transition-colors">
+                                    <div class="w-10 h-10 rounded-full bg-orange-500/10 flex items-center justify-center text-orange-500 font-bold text-sm border border-orange-500/20">H</div>
+                                    <div>
+                                        <h4 class="text-white font-semibold">HTML</h4>
+                                        <p class="text-xs text-slate-400">Infosys Springboard</p>
+                                    </div>
+                                </div>
+
+                                <div class="glass-card p-5 rounded-xl flex items-center gap-4 hover:bg-slate-800/80 transition-colors">
+                                    <div class="w-10 h-10 rounded-full bg-blue-500/10 flex items-center justify-center text-blue-500 font-bold text-sm border border-blue-500/20">C</div>
+                                    <div>
+                                        <h4 class="text-white font-semibold">CSS3</h4>
+                                        <p class="text-xs text-slate-400">Infosys Springboard</p>
+                                    </div>
+                                </div>
+
+                                <div class="glass-card p-5 rounded-xl flex items-center gap-4 hover:bg-slate-800/80 transition-colors">
+                                    <div class="w-10 h-10 rounded-full bg-yellow-500/10 flex items-center justify-center text-yellow-500 font-bold text-sm border border-yellow-500/20">P</div>
+                                    <div>
+                                        <h4 class="text-white font-semibold">Python</h4>
+                                        <p class="text-xs text-slate-400">Kaggle</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contact Section -->
+            <section id="contact" class="py-20 bg-slate-900/50">
+                <div class="container mx-auto px-6 max-w-4xl text-center">
+                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Let's Connect</h2>
+                    <p class="text-slate-400 mb-12 max-w-xl mx-auto">
+                        I'm currently seeking new opportunities. Whether you have a question about my projects or just want to say hi, my inbox is always open.
+                    </p>
+
+                    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+                        <a href="tel:+918341672978" class="glass-card p-6 rounded-xl hover:bg-slate-800 transition-all group">
+                            <div class="w-12 h-12 bg-slate-800 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-sky-500/20 transition-colors">
+                                <svg class="w-5 h-5 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                            </div>
+                            <h3 class="text-white font-semibold text-sm mb-1">Phone</h3>
+                            <p class="text-slate-400 text-xs">+91 8341672978</p>
+                        </a>
+                    <div class="grid md:grid-cols-3 gap-6 mb-12">
+                        <a href="https://wa.me/918341672978" target="_blank" class="glass-card p-6 rounded-xl hover:bg-slate-800 transition-all group">
+                            <div class="w-12 h-12 bg-slate-800 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-sky-500/20 transition-colors">
+                                <svg class="w-5 h-5 text-sky-400" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.017-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.095 3.2 5.076 4.487 2.082.899 2.895.899 3.868.848.889-.046 1.758-.718 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+                            </div>
+                            <h3 class="text-white font-semibold text-sm mb-1">WhatsApp</h3>
+                            <p class="text-slate-400 text-xs">+91 8341672978</p>
+                        </a>
+
+                        <a href="mailto:siddarthapanchakarla@gmail.com" class="glass-card p-6 rounded-xl hover:bg-slate-800 transition-all group">
+                            <div class="w-12 h-12 bg-slate-800 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-sky-500/20 transition-colors">
+                                <svg class="w-5 h-5 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                            </div>
+                            <h3 class="text-white font-semibold text-sm mb-1">Email</h3>
+                            <p class="text-slate-400 text-xs">siddarthapanchakarla@gmail.com</p>
+                        </a>
+
+                        <a href="https://www.linkedin.com/in/panchakarla-siddhartha-278008377" target="_blank" class="glass-card p-6 rounded-xl hover:bg-slate-800 transition-all group">
+                            <div class="w-12 h-12 bg-slate-800 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-sky-500/20 transition-colors">
+                                <svg class="w-5 h-5 text-sky-400" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                            </div>
+                            <h3 class="text-white font-semibold text-sm mb-1">LinkedIn</h3>
+                            <p class="text-slate-400 text-xs">Panchakarla Siddhartha</p>
+                        </a>
                     </div>
 
-                    <!-- Certifications -->
-                    <div>
-                        <h2 class="text-3xl font-bold text-white mb-8">Certifications</h2>
-                        <div class="grid gap-4">
-                            <div class="glass-card p-5 rounded-xl flex items-center gap-4 hover:bg-slate-800/80 transition-colors">
-                                <div class="w-10 h-10 rounded-full bg-orange-500/10 flex items-center justify-center text-orange-500 font-bold text-sm border border-orange-500/20">H</div>
-                                <div>
-                                    <h4 class="text-white font-semibold">HTML</h4>
-                                    <p class="text-xs text-slate-400">Infosys Springboard</p>
-                                </div>
-                            </div>
-
-                            <div class="glass-card p-5 rounded-xl flex items-center gap-4 hover:bg-slate-800/80 transition-colors">
-                                <div class="w-10 h-10 rounded-full bg-blue-500/10 flex items-center justify-center text-blue-500 font-bold text-sm border border-blue-500/20">C</div>
-                                <div>
-                                    <h4 class="text-white font-semibold">CSS3</h4>
-                                    <p class="text-xs text-slate-400">Infosys Springboard</p>
-                                </div>
-                            </div>
-
-                            <div class="glass-card p-5 rounded-xl flex items-center gap-4 hover:bg-slate-800/80 transition-colors">
-                                <div class="w-10 h-10 rounded-full bg-yellow-500/10 flex items-center justify-center text-yellow-500 font-bold text-sm border border-yellow-500/20">P</div>
-                                <div>
-                                    <h4 class="text-white font-semibold">Python</h4>
-                                    <p class="text-xs text-slate-400">Kaggle</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-        <!-- Contact Section -->
-        <section id="contact" class="py-20 bg-slate-900/50">
-            <div class="container mx-auto px-6 max-w-4xl text-center">
-                <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Let's Connect</h2>
-                <p class="text-slate-400 mb-12 max-w-xl mx-auto">
-                    I'm currently seeking new opportunities. Whether you have a question about my projects or just want to say hi, my inbox is always open.
-                </p>
-
-                <div class="grid md:grid-cols-3 gap-6 mb-12">
-                    <a href="tel:+918341672978" class="glass-card p-6 rounded-xl hover:bg-slate-800 transition-all group">
-                        <div class="w-12 h-12 bg-slate-800 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-sky-500/20 transition-colors">
-                            <svg class="w-5 h-5 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
-                        </div>
-                        <h3 class="text-white font-semibold text-sm mb-1">Phone</h3>
-                        <p class="text-slate-400 text-xs">+91 8341672978</p>
-                    </a>
-
-                    <a href="mailto:siddarthapanchakarla@gmail.com" class="glass-card p-6 rounded-xl hover:bg-slate-800 transition-all group">
-                        <div class="w-12 h-12 bg-slate-800 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-sky-500/20 transition-colors">
-                            <svg class="w-5 h-5 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
-                        </div>
-                        <h3 class="text-white font-semibold text-sm mb-1">Email</h3>
-                        <p class="text-slate-400 text-xs">siddarthapanchakarla@gmail.com</p>
-                    </a>
-
-                    <a href="https://www.linkedin.com/in/panchakarla-siddhartha-278008377" target="_blank" class="glass-card p-6 rounded-xl hover:bg-slate-800 transition-all group">
-                        <div class="w-12 h-12 bg-slate-800 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-sky-500/20 transition-colors">
-                            <svg class="w-5 h-5 text-sky-400" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
-                        </div>
-                        <h3 class="text-white font-semibold text-sm mb-1">LinkedIn</h3>
-                        <p class="text-slate-400 text-xs">Panchakarla Siddhartha</p>
+                    <a href="mailto:siddarthapanchakarla@gmail.com" class="inline-block px-10 py-4 bg-gradient-to-r from-sky-500 to-indigo-600 hover:from-sky-400 hover:to-indigo-500 text-white font-bold rounded-full transition-all shadow-lg hover:shadow-sky-500/25 transform hover:-translate-y-1">
+                        Say Hello
                     </a>
                 </div>
+            </section>
+        </main>
 
-                <a href="mailto:siddarthapanchakarla@gmail.com" class="inline-block px-10 py-4 bg-gradient-to-r from-sky-500 to-indigo-600 hover:from-sky-400 hover:to-indigo-500 text-white font-bold rounded-full transition-all shadow-lg hover:shadow-sky-500/25 transform hover:-translate-y-1">
-                    Say Hello
-                </a>
-            </div>
-        </section>
-    </main>
+        <footer class="py-8 text-center text-slate-500 text-sm border-t border-slate-800 bg-slate-900">
+            <p>© 2026 Siddhartha Panchakarla. All Rights Reserved.</p>
+        </footer>
 
-    <footer class="py-8 text-center text-slate-500 text-sm border-t border-slate-800 bg-slate-900">
-        <p>© 2026 Siddhartha Panchakarla. All Rights Reserved.</p>
-    </footer>
+        <script>
+            // Mobile Menu Toggle
+            const btn = document.getElementById('mobile-menu-btn');
+            const menu = document.getElementById('mobile-menu');
 
-    <script>
-        // Mobile Menu Toggle
-        const btn = document.getElementById('mobile-menu-btn');
-        const menu = document.getElementById('mobile-menu');
+            btn.addEventListener('click', () => {
+                menu.classList.toggle('hidden');
+            });
 
-        btn.addEventListener('click', () => {
-            menu.classList.toggle('hidden');
-        });
+            // Sticky Navbar effect
+            window.addEventListener('scroll', () => {
+                const navbar = document.getElementById('navbar');
+                if (window.scrollY > 20) {
+                    navbar.classList.add('shadow-lg');
+                } else {
+                    navbar.classList.remove('shadow-lg');
+                }
+            });
 
-        // Sticky Navbar effect
-        window.addEventListener('scroll', () => {
-            const navbar = document.getElementById('navbar');
-            if (window.scrollY > 20) {
-                navbar.classList.add('shadow-lg');
-            } else {
-                navbar.classList.remove('shadow-lg');
-            }
-        });
-
-        // Smooth scroll for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                menu.classList.add('hidden'); // Close mobile menu if open
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
+            // Smooth scroll for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    menu.classList.add('hidden'); // Close mobile menu if open
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
                 });
             });
-        });
-    </script>
-</body>
-</html>
+        </script>
+    </body>
+    </html>
