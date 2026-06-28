@@ -346,7 +346,7 @@ export function ProductSpecsOverlay({ progress, onProjectSelect }) {
       {/* ── INTRO ── */}
       <div className="section section--left" style={revealStyle(introOp)}>
         <div className="section__card">
-          <img src="/profile.jpg" alt={profile.name} className="section__profile-image" />
+          <img src="./profile.jpg" alt={profile.name} className="section__profile-image" />
           <span className="section__label">Portfolio</span>
           <h1 className="section__title">{profile.name}</h1>
           <div className="section__line" />
