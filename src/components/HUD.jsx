@@ -2,8 +2,8 @@ import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { profile } from '../data/portfolio';
 
-const sections = ['Intro', 'Skills', 'Education', 'Projects', 'Contact'];
-const sectionBreaks = [0, 0.2, 0.4, 0.6, 0.82];
+const sections = ['Home', 'About', 'Skills', 'Projects', 'Education', 'Contact'];
+const sectionBreaks = [0, 0.16, 0.32, 0.48, 0.66, 0.84];
 
 function getActiveSection(progress) {
   for (let i = sectionBreaks.length - 1; i >= 0; i--) {
