@@ -1,223 +1,199 @@
 export const profile = {
-  name: 'Panchakarla Siddhartha',
-  callsign: 'SIDDHARTHA_OS',
-  role: 'AI/ML Full Stack Engineer',
-  location: 'India',
+  name: 'Siddhartha Panchakarla',
+  callsign: 'AI_ENGINEER',
+  role: 'Generative AI & Python Engineer',
+  location: 'Vijayawada, India',
   email: 'siddharthapanchakarla@gmail.com',
   phone: '+91 8341672978',
   linkedin: 'https://www.linkedin.com/in/panchakarla-siddhartha-278008377/',
   github: 'https://github.com/Siddhartha2809',
   resume: '',
   summary:
-    'AI/ML Full Stack Engineer specializing in high-performance event-driven systems, Generative AI workflows, secure portals, and resilient distributed application architecture.',
+    'Computer Science (B.Tech, 2026) graduate who builds LLM-powered applications end to end, from requirements to deployment. Integrated Anthropic Claude APIs into a production-style B2B workflow-automation portal, with hands-on exposure to prompt engineering and RAG fundamentals. Strong in Python, REST API design, SQL/NoSQL databases, event-driven architecture and role-based security. Customer-centric communicator who turns business needs into working, secure technical solutions. Actively building skills in Google Cloud, Gemini and the Agent Development Kit (ADK).',
 };
 
 export const education = [
   {
     id: 'btech',
-    degree: 'Bachelor of Technology in Computer Science',
-    institution: 'DVR & Dr. HS MIC College of Technology',
-    year: '2022 – 2026',
-    details:
-      'Focus on distributed systems, AI/ML architectures, and software engineering principles.',
+    degree: 'B.Tech, Computer Science Engineering',
+    institution: 'CGPA 8.13 / 10.0',
+    year: '2022 - 2026',
+    details: '',
+  },
+  {
+    id: 'intermediate',
+    degree: 'Intermediate (MPC)',
+    institution: '89.2%',
+    year: '2020 - 2022',
+    details: '',
   },
 ];
 
 export const certifications = [
-  { id: 'fullstack', title: 'Full Stack Developer Certification', date: 'Mar 2026' },
-  { id: 'python-kaggle', title: 'Python — Kaggle', date: 'Sep 2023' },
-  { id: 'digital-marketing', title: 'Digital Marketing Fundamentals', date: 'Aug 2025' },
+  { id: 'fullstack', title: 'Full Stack Developer Certification', date: '2026' },
+  { id: 'python-kaggle', title: 'Python, Kaggle', date: '2023' },
+  { id: 'html-css', title: 'HTML & CSS3, Infosys Springboard', date: '2024' },
+  { id: 'digital-marketing', title: 'Digital Marketing Fundamentals', date: '2025' },
 ];
 
 export const hackathons = [
-  'Code Spark 2025',
-  'GenAiversity Hackathon 2025 — Hyderabad (Generative AI)',
-  'Piston Cup 2025 — Vignan College, Visakhapatnam',
-  'Python Workshop — Bapatla Women\'s College',
+  'Code Spark 2025, GenAIversity Hackathon, Hyderabad (generative AI focused)',
+  'Piston Cup 2025, Vignan College, Visakhapatnam',
+  'Python Workshop, Bapatla Women\'s College',
 ];
 
 export const projects = [
   {
+    id: 'multi-agent-adk',
+    title: 'Multi-Agent Business Assistant',
+    category: 'AI & Agents',
+    tech: ['Python', 'Google ADK', 'Gemini API', 'Vertex AI', 'PostgreSQL', 'Cloud Run'],
+    year: '2026',
+    overview:
+      'Built a multi-agent system with Google ADK in which a coordinator agent delegates tasks to specialist agents for data lookup, scheduling, and email drafting.',
+    highlights: [
+      'Connected agents to PostgreSQL and Google Calendar/Gmail through tool calling, with OAuth and least-privilege IAM so each agent accesses only the data it needs.',
+      'Added logging of agent steps and tool calls to debug and troubleshoot agent behavior, reducing failure types.',
+      'Deployed on Cloud Run with secrets in Secret Manager.'
+    ],
+    architecture:
+      'Multi-agent orchestration with Google ADK, tool calling to external APIs, deployed on GCP Cloud Run.',
+    challenges:
+      'Managing least-privilege IAM and OAuth for individual agents, and debugging complex agent-to-agent interactions.',
+    links: [],
+  },
+  {
+    id: 'secure-rag',
+    title: 'Secure RAG Document Assistant',
+    category: 'Google Cloud & AI',
+    tech: ['Python', 'Gemini', 'Vertex AI Embeddings', 'pgvector', 'FastAPI'],
+    year: '2026',
+    overview:
+      'Implemented a Retrieval-Augmented Generation pipeline over documents: chunking, embedding, vector retrieval, and grounded Gemini answers with source citations.',
+    highlights: [
+      'Enforced per-user, role-based document access at retrieval time so users only receive answers from content they are permitted to see.',
+      'Evaluated answer quality on test questions and improved retrieval accuracy by tuning chunk size and top-k.'
+    ],
+    architecture:
+      'FastAPI backend, pgvector for semantic search, Vertex AI for embeddings, and Gemini for grounded generation with RBAC filtering at query time.',
+    challenges:
+      'Implementing real-time role-based access control (RBAC) during the vector retrieval phase to ensure data privacy.',
+    links: [],
+  },
+  {
+    id: 'multimodal-gemini',
+    title: 'Multimodal Document & Voice Assistant',
+    category: 'Generative AI',
+    tech: ['Python', 'Gemini Multimodal API', 'Speech-to-Text', 'React'],
+    year: '2026',
+    overview:
+      'Built an app that accepts images, PDFs and voice input and uses Gemini to extract structured data such as invoice fields and answer questions about them.',
+    highlights: [
+      'Returned validated JSON output for downstream systems.',
+      'Wrote a short architecture README and demo video explaining design trade-offs for a technical audience.'
+    ],
+    architecture:
+      'React frontend capturing voice/image/PDF, Python backend routing to Gemini Multimodal and Speech-to-Text APIs, outputting structured JSON.',
+    challenges:
+      'Handling diverse unstructured input types and ensuring strict, validated JSON schema output from the LLM.',
+    links: [],
+  },
+  {
     id: 'fabrication-os',
-    title: 'AI-Powered Fabrication Management Portal',
-    category: 'B2B Platform',
+    title: 'AI-Powered Fabrication Management B2B Portal',
+    category: 'Full-Stack B2B Platform',
     tech: ['React', 'Supabase', 'Node.js', 'Tailwind CSS', 'Anthropic Claude'],
     year: '2024',
     overview:
-      'A production-grade full-stack B2B platform with real-time event-driven order management — directly applicable to high-throughput AI/ML service backends.',
+      'Designed and delivered a full-stack B2B platform end to end, integrating LLM APIs to automate order and workflow tasks.',
     highlights: [
-      'Integrated LLM APIs (Anthropic Claude) for intelligent workflow automation, demonstrating practical agentic AI development skills.',
-      'Engineered a live two-way negotiation system using Supabase Realtime (WebSocket pub/sub), eliminating polling and enabling low-latency data flows.',
-      'Implemented RBAC via Supabase Auth, applying security-boundary patterns critical to multi-tenant AI inference platforms.',
-      'Built interactive admin dashboards for operational lifecycle visualisation — transferable to ML pipeline monitoring and model observability UIs.',
+      'Integrated Anthropic Claude LLM APIs with prompt engineering for reliable workflow automation.',
+      'Implemented RBAC through Supabase Auth to securely separate customer and admin access.',
+      'Built a real-time negotiation system on WebSocket pub/sub, replacing polling with low-latency data flow.',
+      'Created admin dashboards for operational visibility over PostgreSQL data models.'
     ],
     architecture:
-      'React command surface, Node orchestration layer, Supabase persistence, role-scoped realtime channels, and event-driven negotiation states.',
+      'React frontend, Node.js orchestration, Supabase Auth/PostgreSQL/Realtime, Claude API integration.',
     challenges:
-      'Strict RBAC, live order state synchronization, tenant isolation, and keeping negotiation events consistent across active sessions.',
-    links: [
-      {
-        label: 'Request walkthrough',
-        href: 'mailto:siddharthapanchakarla@gmail.com?subject=Fabrication%20OS%20walkthrough',
-      },
-    ],
+      'Strict RBAC, real-time order state synchronization over WebSockets, and reliable LLM outputs.',
+    links: [],
   },
   {
     id: 'offline-sync-engine',
     title: 'Offline-First Smart Attendance System',
     category: 'Distributed Systems',
-    tech: ['React', 'React Native', 'Express.js', 'SQLite', 'Node.js'],
+    tech: ['React Native', 'Express.js', 'SQLite', 'Node.js'],
     year: '2024',
     overview:
-      'A cross-platform mobile system with a custom conflict-resolution sync engine that protects data integrity during intermittent network states.',
+      'Designed a custom conflict-resolution sync engine to keep data consistent across concurrent offline and online clients.',
     highlights: [
-      'Designed a custom conflict-resolution sync engine for offline-first mobile app, demonstrating distributed data consistency skills relevant to ML data pipelines.',
-      'Applied data preprocessing and bulk-entry optimisation to achieve sub-second latency — same throughput mindset required in AI inference services.',
-      'Built analytics dashboards with RBAC for faculty/admin, mirroring metrics-driven access patterns of ML platform tooling.',
-      'Delivered cross-platform Android & iOS production builds, showcasing full deployment lifecycle ownership.',
+      'Optimized bulk entry and preprocessing to achieve sub-second query latency.',
+      'Built REST endpoints and SQL analytics dashboards with RBAC for faculty and admin roles.',
+      'Delivered and tested cross-platform Android and iOS builds.'
     ],
     architecture:
-      'Local-first SQLite writes, deterministic sync queues, Express API reconciliation, batched transport, and Capacitor native shell delivery.',
+      'Local-first SQLite, deterministic sync queues, Express API reconciliation, and React Native mobile delivery.',
     challenges:
-      'Conflict handling, bulk-entry performance, offline UX continuity, and keeping critical database operations under sub-second latency.',
-    links: [
-      {
-        label: 'Discuss system',
-        href: 'mailto:siddharthapanchakarla@gmail.com?subject=Offline%20Sync%20Engine',
-      },
-    ],
-  },
-  {
-    id: 'secure-auth-portal',
-    title: 'Secure Multi-Role Assessment Portal',
-    category: 'Security & Access',
-    tech: ['PHP', 'JavaScript', 'MySQL', 'HTML5', 'CSS3'],
-    year: '2023',
-    overview:
-      'A multi-role web assessment platform with strict session authentication, dynamic exam creation, and live state management for concurrent users.',
-    highlights: [
-      'Architected session-based authentication with server-side validation — deepening understanding of API security relevant to AI service endpoints.',
-      'Built a proctored exam environment requiring real-time state management and reliability under concurrent user load — analogous to concurrent ML inference requests.',
-      'Handled structured data processing, dynamic query generation, and automated report exports, reinforcing data pipeline fundamentals.',
-    ],
-    architecture:
-      'PHP server-rendered control surfaces, MySQL relational model, hardened session flows, role-specific access layers, and dynamic assessment state.',
-    challenges:
-      'Preventing privilege leakage, keeping proctored assessment state stable, and making authoring tools reliable for active administrators.',
-    links: [
-      {
-        label: 'Review access model',
-        href: 'mailto:siddharthapanchakarla@gmail.com?subject=Secure%20Auth%20Portal',
-      },
-    ],
-  },
-  {
-    id: 'course-registration',
-    title: 'Course Registration & Admin System',
-    category: 'Workflow Automation',
-    tech: ['HTML', 'CSS', 'JavaScript', 'PHP', 'MySQL'],
-    year: '2023',
-    overview:
-      'A course registration and administration system with automated document generation, event-triggered workflows, and end-to-end lifecycle management.',
-    highlights: [
-      'Implemented server-side validation and auto-generated PDF/CSV exports, demonstrating data pipeline output and workflow automation.',
-      'Built event-triggered confirmation letter workflows, improving end-user transparency through automated communication.',
-    ],
-    architecture:
-      'PHP backend with MySQL storage, server-side form validation, automated PDF/CSV generation pipelines, and event-triggered email workflows.',
-    challenges:
-      'Reliable document generation at scale, concurrent registration handling, and maintaining data integrity across multi-step enrollment flows.',
-    links: [
-      {
-        label: 'View project',
-        href: 'mailto:siddharthapanchakarla@gmail.com?subject=Course%20Registration%20System',
-      },
-    ],
-  },
+      'Conflict handling during intermittent network states and maintaining sub-second query performance.',
+    links: [],
+  }
 ];
 
 export const skills = [
   {
     id: 'generative-ai',
-    label: 'Generative AI',
+    label: 'Generative AI & Agents',
     group: 'intelligence',
-    detail: 'LLM-backed workflows, AI interfaces, and application-layer orchestration.',
-    links: ['agentic-workflows', 'python', 'system-design'],
-  },
-  {
-    id: 'agentic-workflows',
-    label: 'Agentic Workflows',
-    group: 'intelligence',
-    detail: 'Task decomposition, tool-mediated flows, and reliable automation loops.',
-    links: ['generative-ai', 'event-driven-architecture', 'nodejs'],
-  },
-  {
-    id: 'nodejs',
-    label: 'Node.js',
-    group: 'runtime',
-    detail: 'API orchestration, realtime services, integrations, and backend glue.',
-    links: ['event-driven-architecture', 'react', 'supabase'],
-  },
-  {
-    id: 'react',
-    label: 'React',
-    group: 'interface',
-    detail: 'Interactive product surfaces, stateful UI, and cinematic frontend systems.',
-    links: ['nodejs', 'supabase', 'system-design'],
-  },
-  {
-    id: 'event-driven-architecture',
-    label: 'Event-Driven Architecture',
-    group: 'systems',
-    detail: 'Realtime data flow, decoupled services, and resilient state propagation.',
-    links: ['nodejs', 'supabase', 'agentic-workflows'],
-  },
-  {
-    id: 'supabase',
-    label: 'Supabase',
-    group: 'data',
-    detail: 'Realtime database workflows, auth-aware persistence, and product backends.',
-    links: ['react', 'nodejs', 'system-design'],
-  },
-  {
-    id: 'system-design',
-    label: 'System Design',
-    group: 'systems',
-    detail: 'Architecture decisions for performance, reliability, and maintainability.',
-    links: ['event-driven-architecture', 'generative-ai', 'python'],
+    detail: 'LLM APIs (Anthropic Claude), Prompt Engineering, LLM-based workflow automation, RAG fundamentals, agent-style workflow design',
+    links: [],
   },
   {
     id: 'python',
-    label: 'Python',
+    label: 'Python (OOP)',
     group: 'runtime',
-    detail: 'Automation, AI/ML experimentation, scripting, and data-oriented tooling.',
-    links: ['generative-ai', 'system-design'],
-  },
-];
-
-export const timeline = [
-  {
-    year: 'T-03',
-    title: 'Secure Systems Foundation',
-    text: 'Built session-aware, multi-role web systems with strict authentication boundaries.',
-    position: [4.8, 1.5, -84],
+    detail: 'Primary language for AI pipelines, backend services, and orchestration.',
+    links: [],
   },
   {
-    year: 'T-02',
-    title: 'Realtime Product Architecture',
-    text: 'Moved into event-driven platforms, live negotiation flows, and production-grade portals.',
-    position: [0, -1.2, -91],
+    id: 'cloud-devops',
+    label: 'Cloud & DevOps',
+    group: 'systems',
+    detail: 'Git, GitHub, CI/CD, Agile/SDLC, Google Cloud (Vertex AI, Cloud Run, IAM)',
+    links: [],
   },
   {
-    year: 'T-01',
-    title: 'Distributed Mobile Reliability',
-    text: 'Designed local-first sync behavior for applications that must keep working offline.',
-    position: [-4.8, 1.2, -98],
+    id: 'databases',
+    label: 'Databases & Schema',
+    group: 'data',
+    detail: 'PostgreSQL (Supabase), MySQL, MongoDB, SQLite, schema modeling, query design',
+    links: [],
   },
   {
-    year: 'NOW',
-    title: 'AI Command Layer',
-    text: 'Combining Generative AI, agentic workflows, and full-stack systems into applied intelligence products.',
-    position: [0, 0, -106],
+    id: 'apis',
+    label: 'APIs & Backend',
+    group: 'systems',
+    detail: 'REST API design, Node.js, Express.js, WebSockets, event-driven architecture',
+    links: [],
   },
+  {
+    id: 'security',
+    label: 'Security & Governance',
+    group: 'systems',
+    detail: 'RBAC, Supabase Auth, server-side validation, secure coding practices',
+    links: [],
+  },
+  {
+    id: 'data-ml',
+    label: 'Data & ML',
+    group: 'data',
+    detail: 'Scikit-learn, Pandas, NumPy, EDA, data cleaning and preprocessing',
+    links: [],
+  },
+  {
+    id: 'frontend',
+    label: 'Frontend',
+    group: 'interface',
+    detail: 'React, React Native, Tailwind CSS, HTML5, CSS3',
+    links: [],
+  }
 ];
